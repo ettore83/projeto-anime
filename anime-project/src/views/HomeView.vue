@@ -14,6 +14,9 @@ const gridData = [
   { ranking: 'maria', release: 1959 },
 ]
 
+const newAnime = ref("")
+
+
 //fim
 
 /* antigo
@@ -40,11 +43,10 @@ function rankingOrder(){
         <input id="inSearch"
          type="text" 
          placeholder="search for anime"
-         v-model="searchQuery">
-
+         v-model.trim="searchQuery">
         <div id="bt-div">
         <button 
-        v-on:click="rankingOrder()"
+        v-on:click="ageOrder()"
         :class="{ active: sortKey == 'ranking' }"
         id="btRanking"> CREATE NEW
           <span v-if="sortKey == 'ranking' && sortOrders.ranking < 0">&darr;</span>
@@ -76,16 +78,24 @@ function rankingOrder(){
 <style scoped>
 
 main{
-  background-color: var(--color-background-home);
+  background-color:var(--color-background-home) ;
   display: grid;
-  margin: auto;  
+  margin: auto; 
+  
 }
 
 #secSearch{
-  width: 80%;
+  width: 100%;
   margin: auto;
   height: 60px;   
   margin-top: 20px; 
+}
+
+#divSearch{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0px;
+  
 }
 
 #bt-div{
@@ -155,13 +165,13 @@ img{
 @media (min-width:700px){
 
   #secSearch{
-    width: 80%;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
   }
 
   #divSearch{
-    width: 100%;
+    width: 80%;
     display: flex;   
     justify-content: space-between;     
   }

@@ -47,9 +47,9 @@ function capitalize(str) {
 
 <template>
 
-<main>
+<main id="main-list">
 
-  <section v-if = "filteredData.length">
+  <section id="sec-search" v-if = "filteredData.length">
   
     <div id  = "div-thead">
 
@@ -122,8 +122,13 @@ function capitalize(str) {
   border-top: 4px solid #fff;
 }
 
+#main-list{
+  margin-top: 0px;
+  
+}
+
 #div-tr{
-  width: 100%;
+  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -148,13 +153,13 @@ function capitalize(str) {
 }
 
 #div-tbody{
-  width: 100;
+  width: 100%;
   
 }
 
 
 #div-info{  
-  width: 100%;
+  width: 80%;
   height: 110px;
   background-color: #3277b3fc;
   border-radius: 10px;
