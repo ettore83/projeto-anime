@@ -190,9 +190,6 @@ img{
     width:150px ;      
   }
   
-  #secList{    
-    
-        
-  }
+  
 }
 </style>
