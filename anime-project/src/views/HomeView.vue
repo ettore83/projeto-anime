@@ -81,6 +81,7 @@ main{
   background-color:var(--color-background-home) ;
   display: grid;
   margin: auto; 
+  height: 1000px;
   
 }
 
