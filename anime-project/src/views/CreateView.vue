@@ -3,8 +3,6 @@
 </script>
 
 <template>
-
-
     <main>
       <div class="about">
         <h1>Create a new Anime</h1>
@@ -54,7 +52,7 @@ h1{
     padding: 10px;
     border-radius: 10px;
     margin: auto;
-    
+        
   }
  
  
