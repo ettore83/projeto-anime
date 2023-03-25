@@ -1,4 +1,4 @@
-<script setup >
+<script >
 
 </script>
 
@@ -52,11 +52,13 @@
 .about{
   width: 100%;
   text-align: center;
-  background-color:red;
+  background-color:#344960;
   height: 900px;
 }
 h1{
   margin: auto;
+  margin-top: 20px;
+  color: aliceblue;
 }
 p{
   color: aliceblue;
@@ -72,13 +74,18 @@ p{
     border-radius: 10px;
     margin: auto;
 }  
-        
- button{
-  width: 80%
+
+#btn-post{
+  width: 80%;
   padding :15px;
   border-radius:10px;
   margin:auto;
+  margin-top: 40px;
+  cursor: pointer;
+
 }       
+
+        
 
   
  

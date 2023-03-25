@@ -45,13 +45,13 @@ function rankingOrder(){
          placeholder="search for anime"
          v-model.trim="searchQuery">
         <div id="bt-div">
-        <button 
+          <RouterLink to="/create"><button 
         v-on:click="ageOrder()"
         :class="{ active: sortKey == 'ranking' }"
-        id="btRanking"> CREATE NEW
+        id="btRanking"> CREATE NEW        
           <span v-if="sortKey == 'ranking' && sortOrders.ranking < 0">&darr;</span>
           <span v-if="sortKey == 'ranking' && sortOrders.ranking >= 0">&uarr;</span>
-          </button>
+          </button></RouterLink>
 
         <button 
         v-on:click="ageOrder()"
