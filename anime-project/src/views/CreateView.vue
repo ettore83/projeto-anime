@@ -1,11 +1,17 @@
 <script >
+import { ref } from "vue";
+
 
 </script>
 
 <template>
     <main>
       <div class="about">
-        <h1>Create a new Anime</h1>
+        <div id="bt-back">
+          <RouterLink to="/">
+          <img id="bt-img-back" src="../assets/ic_back_white@3x.png" alt=""></RouterLink>
+          <h1>Create a new Anime</h1>
+        </div>
       
         <form action="submit" id="form-create">
           <p>Anime name</p>
@@ -17,6 +23,7 @@
           <input
           class="imp-create"
           type="number"
+          v-bind:disabled="realeseData < 4"
           placeholder="When it was released">
           <p>Quantity episodios</p>
           <input
@@ -49,6 +56,21 @@
   </template>
   
   <style >
+
+#bt-back{
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: end;
+}
+
+#bt-img-back{
+  width: 30px;
+  height: 30px;
+  
+}
+
+
 .about{
   width: 100%;
   text-align: center;
@@ -73,6 +95,7 @@ p{
     padding: 15px;
     border-radius: 10px;
     margin: auto;
+    border: none;
 }  
 
 #btn-post{
