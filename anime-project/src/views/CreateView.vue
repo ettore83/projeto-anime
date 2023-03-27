@@ -14,38 +14,43 @@ import { ref } from "vue";
         </div>
       
         <form action="submit" id="form-create">
+
           <p>Anime name</p>
           <input id="tentei"
           class="imp-create"
           type="text"
           placeholder="Name of Anime">
+
           <p>Release date</p>
           <input
           class="imp-create"
           type="number"
           v-bind:disabled="realeseData < 4"
           placeholder="When it was released">
+
           <p>Quantity episodios</p>
           <input
           class="imp-create"
           type="text"
           placeholder="Episodios released">
+
           <p>Genre type</p>
           <input
           class="imp-create"
           type="text"
           placeholder="Genre">
+
           <p>Written by</p>
           <input
           class="imp-create"
           type="text"
           placeholder="written by">
+
           <p>Description</p>
           <input
           class="imp-create"
           type="text"
-          placeholder="Description"
-          >
+          placeholder="Description">
           <br>
           <button id="btn-post">
           POST
@@ -66,10 +71,8 @@ import { ref } from "vue";
 
 #bt-img-back{
   width: 30px;
-  height: 30px;
-  
+  height: 30px;  
 }
-
 
 .about{
   width: 100%;
@@ -77,19 +80,21 @@ import { ref } from "vue";
   background-color:#344960;
   height: 900px;
 }
+
 h1{
   margin: auto;
   margin-top: 20px;
   color: aliceblue;
 }
+
 p{
   color: aliceblue;
   width: 80%;
   margin: auto;
   text-align: left;
-  margin-top: 20px;
-  
+  margin-top: 20px;  
 }
+
 .imp-create{
     width: 80%;
     padding: 15px;
@@ -105,9 +110,19 @@ p{
   margin:auto;
   margin-top: 40px;
   cursor: pointer;
-
 }       
 
+@media (min-width:700px){
+  #btn-post{
+  width: 300px;
+  padding :15px;
+  border-radius:10px;
+  margin:auto;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+}
         
 
   
