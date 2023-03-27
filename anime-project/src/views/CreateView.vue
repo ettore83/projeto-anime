@@ -16,6 +16,7 @@ import { ref } from "vue";
         <form action="submit" id="form-create">
 
           <p>Anime name</p>
+          <label for="tentei" class="label-inp">Anime name</label>
           <input id="tentei"
           class="imp-create"
           type="text"
@@ -25,7 +26,6 @@ import { ref } from "vue";
           <input
           class="imp-create"
           type="number"
-          v-bind:disabled="realeseData < 4"
           placeholder="When it was released">
 
           <p>Quantity episodios</p>
@@ -93,6 +93,14 @@ p{
   margin: auto;
   text-align: left;
   margin-top: 20px;  
+}
+.label-inp{
+  color: aliceblue;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  margin-top: 20px;  
+
 }
 
 .imp-create{
