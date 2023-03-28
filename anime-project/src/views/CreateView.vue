@@ -15,38 +15,43 @@ import { ref } from "vue";
       
         <form action="submit" id="form-create">
 
-          <p>Anime name</p>
+          
           <label for="tentei" class="label-inp">Anime name</label>
           <input id="tentei"
           class="imp-create"
           type="text"
           placeholder="Name of Anime">
 
-          <p>Release date</p>
+          
+          <label for="tentei" class="label-inp">Release date</label>
           <input
           class="imp-create"
           type="number"
           placeholder="When it was released">
 
-          <p>Quantity episodios</p>
+        
+          <label for="tentei" class="label-inp">Quantity episodios</label>
           <input
           class="imp-create"
           type="text"
           placeholder="Episodios released">
 
-          <p>Genre type</p>
+          
+          <label for="tentei" class="label-inp">Genre type</label>
           <input
           class="imp-create"
           type="text"
           placeholder="Genre">
 
-          <p>Written by</p>
+          
+          <label for="tentei" class="label-inp">Written by</label>
           <input
           class="imp-create"
           type="text"
           placeholder="written by">
 
-          <p>Description</p>
+          
+          <label for="tentei" class="label-inp">Description</label>
           <input
           class="imp-create"
           type="text"
@@ -87,13 +92,11 @@ h1{
   color: aliceblue;
 }
 
-p{
-  color: aliceblue;
-  width: 80%;
-  margin: auto;
-  text-align: left;
-  margin-top: 20px;  
+#form-create{
+  display: grid;
+  gap: 2px;
 }
+
 .label-inp{
   color: aliceblue;
   width: 80%;
@@ -111,6 +114,8 @@ p{
     border: none;
 }  
 
+
+
 #btn-post{
   width: 80%;
   padding :15px;
@@ -121,13 +126,14 @@ p{
 }       
 
 @media (min-width:700px){
-  #btn-post{
-  width: 300px;
-  padding :15px;
-  border-radius:10px;
-  margin:auto;
-  margin-top: 40px;
-  cursor: pointer;
+ .about{
+  text-align: left;
+ }
+
+  .imp-create{
+  width: 30%;
+  text-align: left;
+  
 }
 
 }
