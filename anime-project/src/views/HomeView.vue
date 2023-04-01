@@ -14,7 +14,7 @@ const gridData = [
   { ranking: 'maria', release: 1959 },
 ]
 
-const newAnime = ref("")
+
 
 
 //fim
@@ -39,23 +39,25 @@ function rankingOrder(){
   <main id="main-content">
     
     <section id="secSearch">
+
       <div id="divSearch">
+
         <input id="inSearch"
          type="text" 
          placeholder="search for anime"
          v-model.trim="searchQuery">
-        <div id="bt-div">
-          <RouterLink to="/create"><button 
-        v-on:click="ageOrder()"
-        :class="{ active: sortKey == 'ranking' }"
-        id="btRanking"> CREATE NEW        
-          <span v-if="sortKey == 'ranking' && sortOrders.ranking < 0">&darr;</span>
-          <span v-if="sortKey == 'ranking' && sortOrders.ranking >= 0">&uarr;</span>
-          </button></RouterLink>
 
-        <button 
-        v-on:click="ageOrder()"
-        :class="{ active: sortKey == 'age' }"
+        <div id="bt-div">
+
+          <RouterLink to="/create">
+            <button                       
+              id="btRanking"> CREATE NEW        
+              <span v-if="sortKey == 'ranking' && sortOrders.ranking < 0">&darr;</span>
+              <span v-if="sortKey == 'ranking' && sortOrders.ranking >= 0">&uarr;</span>
+           </button>
+          </RouterLink>
+
+        <button         
           id="btAge" > TO CHOOSE
           <span v-if="sortKey == 'age' && sortOrders.age < 0">&darr;</span>
           <span v-if="sortKey == 'age' && sortOrders.age >= 0">&uarr;</span>

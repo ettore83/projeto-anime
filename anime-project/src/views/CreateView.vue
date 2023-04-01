@@ -1,12 +1,17 @@
 <script >
 import { ref } from "vue";
 
+const newAnime = ref("")
+
 
 </script>
 
 <template>
+
     <main>
+
       <div class="about">
+
         <div id="bt-back">
           <RouterLink to="/">
           <img id="bt-img-back" src="../assets/ic_back_white@3x.png" alt=""></RouterLink>
@@ -57,12 +62,17 @@ import { ref } from "vue";
           type="text"
           placeholder="Description">
           <br>
+
           <button id="btn-post">
           POST
           </button>
+
         </form>
+
       </div>
+
     </main>
+
   </template>
   
   <style >

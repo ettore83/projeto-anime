@@ -38,6 +38,7 @@ const filteredData = computed(() => {
 function sortBy(key) {
   sortKey.value = key
   sortOrders.value[key] *= -1  
+  
 }
 
 function capitalize(str) {
@@ -77,15 +78,18 @@ function capitalize(str) {
         <img src = "../assets/chainsaw-man.jpg" alt = "">
         <div id = "info-name">
 
-          <h1>name</h1>
-          <p>{{entry["age"]}}</p>
+          <h1>{{ entry["ranking"] }}</h1>
+          <p>{{ entry["release"] }}</p>
           <p>episodios</p>
+          <p>Genre</p>
   
         </div>
   
-        <div id = "div-td" v-for = "key in columns">
+        <div id = "div-info-desc">
 
-          {{entry[key]}}  
+          <p>Written</p>
+          <p>Description</p>
+                 
   
         </div>
   
