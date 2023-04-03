@@ -1,7 +1,20 @@
 <script >
 import { ref } from "vue";
 
+const animeName = ref("")
+const releaseDate = ref("")
+const quantityEpisodios = ref("")
+const genreType = ref("")
+const writtenBy = ref("")
+const description = ref("")
+
 const newAnime = ref("")
+
+const nameIsValid = !!animeName.value
+
+submitform(){
+  console.log()
+}
 
 
 </script>
@@ -21,46 +34,58 @@ const newAnime = ref("")
         <form action="submit" id="form-create">
 
           
-          <label for="tentei" class="label-inp">Anime name</label>
+          <label for="anime-name" class="label-inp">Anime name</label>
           <input id="tentei"
+          v-model = "animeName"
           class="imp-create"
           type="text"
           placeholder="Name of Anime">
+          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
 
           
-          <label for="tentei" class="label-inp">Release date</label>
+          <label for="release-date" class="label-inp">Release date</label>
           <input
+          v-model = "releaseDate"
           class="imp-create"
           type="number"
           placeholder="When it was released">
+          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
 
         
-          <label for="tentei" class="label-inp">Quantity episodios</label>
+          <label for="quantity-episodios" class="label-inp">Quantity episodios</label>
           <input
+          v-model = "quantityEpisodios"
           class="imp-create"
           type="text"
           placeholder="Episodios released">
+          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
 
           
-          <label for="tentei" class="label-inp">Genre type</label>
+          <label for="genre-type" class="label-inp">Genre type</label>
           <input
+          v-model = "genreType"
           class="imp-create"
           type="text"
           placeholder="Genre">
+          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
 
           
-          <label for="tentei" class="label-inp">Written by</label>
+          <label for="written-by" class="label-inp">Written by</label>
           <input
+          v-model = "writtenBy"
           class="imp-create"
           type="text"
           placeholder="written by">
+          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
 
           
-          <label for="tentei" class="label-inp">Description</label>
+          <label for="description" class="label-inp">Description</label>
           <input
+          v-model = "description"
           class="imp-create"
           type="text"
           placeholder="Description">
+          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
           <br>
 
           <button id="btn-post">
