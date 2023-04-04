@@ -78,8 +78,8 @@ function capitalize(str) {
         <img src = "../assets/chainsaw-man.jpg" alt = "">
         <div id = "info-name">
 
-          <h1>{{ entry["ranking"] }}</h1>
-          <p>{{ entry["release"] }}</p>
+          <h1>{{ entry["name"] }}</h1>
+          <p>{{ entry["ranking"] }}</p>
           <p>episodios</p>
           <p>Genre</p>
   
@@ -89,6 +89,7 @@ function capitalize(str) {
 
           <p>Written</p>
           <p>Description</p>
+          <p>release</p>
                  
   
         </div>

@@ -3,15 +3,15 @@ import Demogrid from '../components/TheWelcome.vue'
 import { ref } from "vue";
 
 const searchQuery = ref('')
-const gridColumns = ['ranking', 'release',]
+const gridColumns = ['name', 'ranking',]
 
 const gridData = [
-  { ranking: 'Ettore', release: 1983 },
-  { ranking: 'Priscila', release: 1986 },
-  { ranking: 'Lorenzo', release: 2015 },
-  { ranking: 'Vicenzo', release: 2019 },
-  { ranking: 'luiz', release: 1957 },
-  { ranking: 'maria', release: 1959 },
+  { name: 'Ettore', ranking: 1983 },
+  { name: 'Priscila', ranking: 1986 },
+  { name: 'Lorenzo', ranking: 2015 },
+  { name: 'Vicenzo', ranking: 2019 },
+  { name: 'luiz', ranking: 1957 },
+  { name: 'maria', ranking: 1959 },
 ]
 
 
