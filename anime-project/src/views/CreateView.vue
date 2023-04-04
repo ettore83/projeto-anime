@@ -11,10 +11,14 @@ const description = ref("")
 const newAnime = ref("")
 
 const nameIsValid = !!animeName.value
+const releasedIsValid = !!releaseDate.value
+const episodiosIsValid = !!quantityEpisodios.value
+const genreIsValid = !!genreType.value
+const writtenIsValid = !!writtenBy.value
+const descriptionIsValid = !!description.value 
 
-submitform(){
-  console.log()
-}
+
+
 
 
 </script>
@@ -49,7 +53,7 @@ submitform(){
           class="imp-create"
           type="number"
           placeholder="When it was released">
-          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
+          <p v-if="!releasedIsValid" class="error-msg">The release date fild is required</p>
 
         
           <label for="quantity-episodios" class="label-inp">Quantity episodios</label>
@@ -58,7 +62,7 @@ submitform(){
           class="imp-create"
           type="text"
           placeholder="Episodios released">
-          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
+          <p v-if="!episodiosIsValid" class="error-msg">The quantity episodios fild is required</p>
 
           
           <label for="genre-type" class="label-inp">Genre type</label>
@@ -67,7 +71,7 @@ submitform(){
           class="imp-create"
           type="text"
           placeholder="Genre">
-          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
+          <p v-if="!genreIsValid" class="error-msg">The genre type fild is required</p>
 
           
           <label for="written-by" class="label-inp">Written by</label>
@@ -76,7 +80,7 @@ submitform(){
           class="imp-create"
           type="text"
           placeholder="written by">
-          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
+          <p v-if="!writtenIsValid" class="error-msg">The written by fild is required</p>
 
           
           <label for="description" class="label-inp">Description</label>
@@ -85,7 +89,7 @@ submitform(){
           class="imp-create"
           type="text"
           placeholder="Description">
-          <p v-if="!nameIsValid" class="error-msg">The anime name fild is required</p>
+          <p v-if="!descriptionIsValid" class="error-msg">The description fild is required</p>
           <br>
 
           <button id="btn-post">
