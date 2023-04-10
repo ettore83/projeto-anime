@@ -106,6 +106,10 @@ const descriptionIsValid = !!description.value
   
   <style >
 
+main{
+  background-color:#344960;
+}  
+
 #bt-back{
   display: flex;
   width: 80%;
@@ -121,7 +125,7 @@ const descriptionIsValid = !!description.value
 .about{
   width: 100%;
   text-align: center;
-  background-color:#344960;
+  
   height: 900px;
 }
 
@@ -162,18 +166,34 @@ h1{
   margin:auto;
   margin-top: 40px;
   cursor: pointer;
+  background-color: crimson;
+  color: aliceblue;
+  
 }       
+
+.error-msg{
+  color: rgb(236, 51, 51);
+  font-size: 13px;
+}
 
 @media (min-width:700px){
  .about{
   text-align: left;
+  width: 80%;
+  margin: auto;
  }
 
   .imp-create{
-  width: 30%;
-  margin: auto;
-  text-align: left;
-  
+  width: 35%;
+  margin: initial;
+    
+}
+
+#btn-post{
+  width: 35%;
+  margin: initial;
+
+
 }
 
 }
