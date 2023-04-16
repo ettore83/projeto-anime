@@ -1,5 +1,5 @@
 <script >
-import { ref } from "vue";
+/*import { ref } from "vue";
 
 const animeName = ref("")
 const releaseDate = ref("")
@@ -15,7 +15,7 @@ const releasedIsValid = !!releaseDate.value
 const episodiosIsValid = !!quantityEpisodios.value
 const genreIsValid = !!genreType.value
 const writtenIsValid = !!writtenBy.value
-const descriptionIsValid = !!description.value 
+const descriptionIsValid = !!description.value */
 
 
 
@@ -104,7 +104,7 @@ const descriptionIsValid = !!description.value
 
   </template>
   
-  <style >
+  <style scoped>
 
 main{
   background-color:#344960;
@@ -157,8 +157,6 @@ h1{
     border: none;
 }  
 
-
-
 #btn-post{
   width: 80%;
   padding :15px;
@@ -197,9 +195,6 @@ h1{
 }
 
 }
-        
-
   
- 
  
   </style>
