@@ -1,9 +1,29 @@
 <template>
-    <div class="about">
-      <h1>This is an ranking page</h1>
-    </div>
+    <main>
+      <div>
+        <h1>Avalie o anime</h1>
+        <div id="stars">
+        
+        </div>
+      </div>     
+
+      <div>
+      
+      </div>
+
+    </main>
   </template>
   
-  <style>
+  <style scoped>
+  .about{
+    width: 80%;    
+    margin: auto;    
+  }
+
+  #stars{
+    width: 80%;
+    height: 80px;
+    border: 2px solid black;
+  }
   
   </style>
