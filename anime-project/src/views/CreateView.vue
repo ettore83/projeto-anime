@@ -90,7 +90,15 @@ const descriptionIsValid = !!description.value */
           type="text"
           placeholder="Description">
           <p v-if="!descriptionIsValid" class="error-msg">The description fild is required</p>
-          <br>
+
+          <label for="description" class="label-inp">Upload-img</label>
+          <input
+          v-model = "image"
+          class="imp-create"
+          type="text"
+          placeholder="Description">
+          <p v-if="!descriptionIsValid" class="error-msg">The description fild is required</p>
+          
 
           <button id="btn-post">
           POST
