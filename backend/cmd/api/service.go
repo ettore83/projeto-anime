@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/ettore83/projeto-anime/cmd/api/internal/config"
+	"github.com/ettore83/projeto-anime/cmd/api/internal/wire"
 	"github.com/ettore83/projeto-anime/internal/server"
 )
 
@@ -14,7 +15,14 @@ func run(ctx context.Context, cfg *config.Config) error {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 
-	r := server.NewRouter()
+	db, err := wire.NewDb(ctx, cfg)
+	if err != nil {
+		return err
+	}
+
+	svc := wire.NewService(db, cfg)
+
+	r := server.NewRouter(ctx, svc)
 	srv := server.New(r, cfg.Http.Address, cfg.Http.WriteTimeout, cfg.Http.ReadTimeout, cfg.Http.IdleTimeout)
 
 	done := make(chan struct{}, 1)
