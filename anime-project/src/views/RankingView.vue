@@ -1,3 +1,17 @@
+<script>
+import { useCompositionApi } from '../services/config'
+
+export default {
+  setup() {
+    const compositionApi = useCompositionApi()
+
+    compositionApi.fetchData()
+
+    return { compositionApi }
+  }
+}
+</script>
+
 <template>
     <main>
       <div>
@@ -5,7 +19,12 @@
         <div id="stars">
         
         </div>
-      </div>     
+      </div>    
+      <p v-if="compositionApi.state.loading">Carregando...</p>
+    <p v-if="compositionApi.state.error">Erro ao carregar os dados</p>
+    <ul v-if="compositionApi.state.data">
+      <li v-for="item in compositionApi.state.data" :key="item.id">{{ item.name }}</li>
+    </ul> 
 
       <div>
       

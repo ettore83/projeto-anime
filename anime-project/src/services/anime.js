@@ -1,4 +1,4 @@
-import { APISettings } from "./config";import axios from "axios";
+/* import { APISettings } from "./config";import axios from "axios";
 
 export default {
     index() { console.log(APISettings);
@@ -12,3 +12,4 @@ export default {
     });
 },
 }
+*/
