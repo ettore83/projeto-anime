@@ -3,9 +3,16 @@ version: '3.4'
 services:
   api:
     image: api
+    command: "/usr/bin/api"
     ports:
       - "8081:8081"
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: anime-db
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath .
+    ports:
+      - "8000:8000"

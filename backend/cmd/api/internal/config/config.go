@@ -12,6 +12,15 @@ type Config struct {
 		ReadTimeout  int    `envconfig:"HTTP_READ_TIMEOUT" default:"5"`
 		IdleTimeout  int    `envconfig:"HTTP_IDLE_TIMEOUT" default:"5"`
 	}
+	AWS struct {
+		Region string `envconfig:"AWS_REGION" default:":us-west-2"`
+	}
+	DynamoDB struct {
+		Host   string `envconfig:"AWS_DYNAMODB_HOST" default:"http://anime-db:8000"`
+		Tables struct {
+			Anime string `envconfig:"AWS_DYNAMODB_ANIME_TABLE" default:"anime"`
+		}
+	}
 }
 
 // NewConfig creates a new initialised application Config.
