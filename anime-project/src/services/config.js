@@ -12,11 +12,11 @@ export default function useCompositionApi() {
     state.loading = true
 
     try {
-      const response = await axios.get('/api/anime'
-     )
+      const response = await axios.get('/api/anime')
       console.log(response)
       state.data = response.data
-    } catch (error) {
+    } 
+      catch (error) {
       console.log(error)
       state.error = error
     }
