@@ -1,7 +1,7 @@
 <script >
 
-import { required } from '@vuelidate'
-import { useVuelidate } from '@vuelidate'
+import { required, reactive, numeric, integer, minLength } from "@vuelidate/validators";
+import { useVuelidate } from "@vuelidate/core";
 
 export default {
   setup() {
@@ -14,8 +14,8 @@ export default {
       description : '',
       validations: {
         animeName: { required,},
-        releaseDate: { required, minLength: minLength(8) },
-        quantityEpisodios: { required,},
+        releaseDate: { required, integer, minLength: minLength(8) },
+        quantityEpisodios: { required, numeric},
         genreType: { required,},
         writtenBy: { required,},
         description: { required,},
