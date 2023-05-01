@@ -1,4 +1,4 @@
-<script >
+<script setup>
 
 import { required, reactive, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
@@ -12,7 +12,7 @@ import { useVuelidate } from "@vuelidate/core";
       description : '',
     });
 
-    const rules: {
+    const rules = {
       animeName: { required },
       releaseDate: { required, integer, minLength: minLength(8) },
       quantityEpisodios: { required, numeric},
