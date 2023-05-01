@@ -3,8 +3,6 @@
 import { required, reactive, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 
-export default {
-  setup() {
     const state = reactive({
       animeName : '',
       releaseDate : '',
@@ -12,21 +10,22 @@ export default {
       genreType : '',
       writtenBy : '',
       description : '',
-      validations: {
-        animeName: { required,},
-        releaseDate: { required, integer, minLength: minLength(8) },
-        quantityEpisodios: { required, numeric},
-        genreType: { required,},
-        writtenBy: { required,},
-        description: { required,},
-      }
-    })
+    });
 
-    const v$ = useVuelidate(state.validations, state)
+    const rules: {
+      animeName: { required },
+      releaseDate: { required, integer, minLength: minLength(8) },
+      quantityEpisodios: { required, numeric},
+      genreType: { required },
+      writtenBy: { required },
+      description: { required },
+    };     
+    
 
-    return { state, v$ }
-  }
-}
+    const v$ = useVuelidate(rules, state);
+
+  
+
 
 
 
