@@ -28,7 +28,6 @@ import { useVuelidate } from "@vuelidate/core";
 
 
 
-
 </script>
 
 <template>
