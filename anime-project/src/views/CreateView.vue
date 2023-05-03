@@ -1,4 +1,4 @@
-<script setup>
+<script >
 
 import { required, reactive, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
