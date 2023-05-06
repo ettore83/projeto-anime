@@ -23,6 +23,7 @@ import { useVuelidate } from "@vuelidate/core";
     
 
     const v$ = useVuelidate (rules, state);
+    return {  state, v$ }
 
 
 
@@ -48,9 +49,18 @@ import { useVuelidate } from "@vuelidate/core";
           v-model.trim = "state.animeName"
           class="imp-create"
           type="text"
-          placeholder="Name of Anime">
+          placeholder="Name of Anime">        
+
+
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
-          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>          
+          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div> {{ animeName.value }}  
+
+           <!-- <span
+          class="s-big"
+          v-for="error of v$.animeName.$errors"
+          :key="error.$uid"
+          >{{ animeName.value }}
+          </span>-->       
 
           
           <label for="release-date" class="label-inp">Release date</label>
@@ -59,8 +69,16 @@ import { useVuelidate } from "@vuelidate/core";
           class="imp-create"
           type="number"
           placeholder="When it was released">
+
           <div v-if="v$?.releaseDate?.$dirty && !v$?.releaseDate?.$error">The anime invalid</div>
-          <div v-if="v$?.releaseDate?.$dirty && v$?.releaseDate?.$error">The anime fild is required</div>
+          <div v-if="v$?.releaseDate?.$dirty && v$?.releaseDate?.$error">The anime fild is required</div> {{ releaseDate.value }} 
+
+          <!-- <span
+          class="s-big"
+          v-for="error of v$.state.releaseDate.$errors"
+          :key="error.$uid"
+          >{{ releaseDate.value }}
+          </span>-->
 
         
           <label for="quantity-episodios" class="label-inp">Quantity episodios</label>
@@ -69,8 +87,16 @@ import { useVuelidate } from "@vuelidate/core";
           class="imp-create"
           type="text"
           placeholder="Episodios released">
+
           <div v-if="v$?.quantityEpisodios?.$dirty && !v$?.quantityEpisodios?.$error">The anime invalid</div>
-          <div v-if="v$?.quantityEpisodios?.$dirty && v$?.quantityEpisodios?.$error">The anime fild is required</div>
+          <div v-if="v$?.quantityEpisodios?.$dirty && v$?.quantityEpisodios?.$error">The anime fild is required</div> {{ quantityEpisodios.value }} 
+
+          <!-- <span
+          class="s-big"
+          v-for="error of v$.state.quantityEpisodios.$errors"
+          :key="error.$uid"
+          >{{ quantityEpisodios.value }}
+          </span>-->
 
           
           <label for="genre-type" class="label-inp">Genre type</label>
@@ -79,8 +105,16 @@ import { useVuelidate } from "@vuelidate/core";
           class="imp-create"
           type="text"
           placeholder="Genre">
-          <div v-if="v$?.genreType?.$dirty && !v$?.genreType?.$error">The anime invalid</div>
-          <div v-if="v$?.genreType?.$dirty && v$?.genreType?.$error">The anime fild is required</div>
+
+           <div v-if="v$?.genreType?.$dirty && !v$?.genreType?.$error">The anime invalid</div>
+          <div v-if="v$?.genreType?.$dirty && v$?.genreType?.$error">The anime fild is required</div> {{ genreType.value }} 
+
+          <!--<span
+          class="s-big"
+          v-for="error of v$.state.genreType.$errors"
+          :key="error.$uid"
+          >{{ genreType.value }}
+          </span>-->
 
           
           <label for="written-by" class="label-inp">Written by</label>
@@ -89,8 +123,16 @@ import { useVuelidate } from "@vuelidate/core";
           class="imp-create"
           type="text"
           placeholder="written by">
-          <div v-if="v$?.writtenBy?.$dirty && !v$?.writtenBy?.$error">The anime invalid</div>
-          <div v-if="v$?.writtenBy?.$dirty && v$?.writtenBy?.$error">The anime fild is required</div>
+
+           <div v-if="v$?.writtenBy?.$dirty && !v$?.writtenBy?.$error">The anime invalid</div>
+          <div v-if="v$?.writtenBy?.$dirty && v$?.writtenBy?.$error">The anime fild is required</div>{{ writtenBy.value }} 
+
+          <!--<span
+          class="s-big"
+          v-for="error of v$.state.writtenBy.$errors"
+          :key="error.$uid"
+          >{{ writtenBy.value }}
+          </span>-->
 
           
           <label for="description" class="label-inp">Description</label>
@@ -99,15 +141,17 @@ import { useVuelidate } from "@vuelidate/core";
           class="imp-create"
           type="text"
           placeholder="Description">
-          <div v-if="v$?.description?.$dirty && !v$?.description?.$error">The anime invalid</div>
-          <div v-if="v$?.description?.$dirty && v$?.description?.$error">The anime fild is required</div>
 
-          <label for="description" class="label-inp">Upload-img</label>
-          <input
-          v-model = "image"
-          class="imp-create"
-          type="text"
-          placeholder="Description">
+           <div v-if="v$?.description?.$dirty && !v$?.description?.$error">The anime invalid</div>
+          <div v-if="v$?.description?.$dirty && v$?.description?.$error">The anime fild is required</div> {{ description.value }} 
+
+           <!--<span
+          class="s-big"
+          v-for="error of v$.state.description.$errors"
+          :key="error.$uid"
+          >{{ description.value }}
+          </span>-->
+
           
           
 
