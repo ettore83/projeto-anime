@@ -22,9 +22,7 @@ import { useVuelidate } from "@vuelidate/core";
     };     
     
 
-    const v$ = useVuelidate(rules, state);
-
-  
+    const v$ = useVuelidate (rules, state);
 
 
 
