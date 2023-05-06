@@ -1,6 +1,6 @@
 <script >
-
-import { required, reactive, numeric, integer, minLength } from "@vuelidate/validators";
+import { reactive } from "vue";
+import { required, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 
     const state = reactive({
@@ -53,7 +53,7 @@ import { useVuelidate } from "@vuelidate/core";
 
 
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
-          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div> {{ animeName.value }}  
+          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>
 
            <!-- <span
           class="s-big"
@@ -71,7 +71,7 @@ import { useVuelidate } from "@vuelidate/core";
           placeholder="When it was released">
 
           <div v-if="v$?.releaseDate?.$dirty && !v$?.releaseDate?.$error">The anime invalid</div>
-          <div v-if="v$?.releaseDate?.$dirty && v$?.releaseDate?.$error">The anime fild is required</div> {{ releaseDate.value }} 
+          <div v-if="v$?.releaseDate?.$dirty && v$?.releaseDate?.$error">The anime fild is required</div> 
 
           <!-- <span
           class="s-big"
@@ -89,8 +89,7 @@ import { useVuelidate } from "@vuelidate/core";
           placeholder="Episodios released">
 
           <div v-if="v$?.quantityEpisodios?.$dirty && !v$?.quantityEpisodios?.$error">The anime invalid</div>
-          <div v-if="v$?.quantityEpisodios?.$dirty && v$?.quantityEpisodios?.$error">The anime fild is required</div> {{ quantityEpisodios.value }} 
-
+          <div v-if="v$?.quantityEpisodios?.$dirty && v$?.quantityEpisodios?.$error">The anime fild is required</div>
           <!-- <span
           class="s-big"
           v-for="error of v$.state.quantityEpisodios.$errors"
@@ -107,7 +106,7 @@ import { useVuelidate } from "@vuelidate/core";
           placeholder="Genre">
 
            <div v-if="v$?.genreType?.$dirty && !v$?.genreType?.$error">The anime invalid</div>
-          <div v-if="v$?.genreType?.$dirty && v$?.genreType?.$error">The anime fild is required</div> {{ genreType.value }} 
+          <div v-if="v$?.genreType?.$dirty && v$?.genreType?.$error">The anime fild is required</div> 
 
           <!--<span
           class="s-big"
@@ -125,8 +124,7 @@ import { useVuelidate } from "@vuelidate/core";
           placeholder="written by">
 
            <div v-if="v$?.writtenBy?.$dirty && !v$?.writtenBy?.$error">The anime invalid</div>
-          <div v-if="v$?.writtenBy?.$dirty && v$?.writtenBy?.$error">The anime fild is required</div>{{ writtenBy.value }} 
-
+          <div v-if="v$?.writtenBy?.$dirty && v$?.writtenBy?.$error">The anime fild is required</div>
           <!--<span
           class="s-big"
           v-for="error of v$.state.writtenBy.$errors"
@@ -143,7 +141,7 @@ import { useVuelidate } from "@vuelidate/core";
           placeholder="Description">
 
            <div v-if="v$?.description?.$dirty && !v$?.description?.$error">The anime invalid</div>
-          <div v-if="v$?.description?.$dirty && v$?.description?.$error">The anime fild is required</div> {{ description.value }} 
+          <div v-if="v$?.description?.$dirty && v$?.description?.$error">The anime fild is required</div> 
 
            <!--<span
           class="s-big"
