@@ -23,7 +23,7 @@ import { useVuelidate } from "@vuelidate/core";
     
 
     const v$ = useVuelidate (rules, state);
-    return {  state, v$ }
+    
 
 
 
@@ -46,109 +46,109 @@ import { useVuelidate } from "@vuelidate/core";
           
           <label for="anime-name" class="label-inp">Anime name</label>
           <input id="tentei"
-          v-model.trim = "state.animeName"
+          v-model.trim = "animeName"
           class="imp-create"
           type="text"
           placeholder="Name of Anime">        
 
 
-          <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
-          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>
+          <!--<div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
+          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>-->   
 
-           <!-- <span
+            <span
           class="s-big"
           v-for="error of v$.animeName.$errors"
           :key="error.$uid"
           >{{ animeName.value }}
-          </span>-->       
+          </span>    
 
           
           <label for="release-date" class="label-inp">Release date</label>
           <input
-          v-model.trim = "state.releaseDate"
+          v-model.trim = "releaseDate"
           class="imp-create"
           type="number"
           placeholder="When it was released">
 
-          <div v-if="v$?.releaseDate?.$dirty && !v$?.releaseDate?.$error">The anime invalid</div>
-          <div v-if="v$?.releaseDate?.$dirty && v$?.releaseDate?.$error">The anime fild is required</div> 
+          <!-- <div v-if="v$?.releaseDate?.$dirty && !v$?.releaseDate?.$error">The anime invalid</div>
+          <div v-if="v$?.releaseDate?.$dirty && v$?.releaseDate?.$error">The anime fild is required</div> -->
 
-          <!-- <span
+          <span
           class="s-big"
           v-for="error of v$.state.releaseDate.$errors"
           :key="error.$uid"
           >{{ releaseDate.value }}
-          </span>-->
+          </span>
 
         
           <label for="quantity-episodios" class="label-inp">Quantity episodios</label>
           <input
-          v-model.trim = "state.quantityEpisodios"
+          v-model.trim = "quantityEpisodios"
           class="imp-create"
           type="text"
           placeholder="Episodios released">
 
-          <div v-if="v$?.quantityEpisodios?.$dirty && !v$?.quantityEpisodios?.$error">The anime invalid</div>
-          <div v-if="v$?.quantityEpisodios?.$dirty && v$?.quantityEpisodios?.$error">The anime fild is required</div>
-          <!-- <span
+          <!--<div v-if="v$?.quantityEpisodios?.$dirty && !v$?.quantityEpisodios?.$error">The anime invalid</div>
+          <div v-if="v$?.quantityEpisodios?.$dirty && v$?.quantityEpisodios?.$error">The anime fild is required</div>-->
+           <span
           class="s-big"
           v-for="error of v$.state.quantityEpisodios.$errors"
           :key="error.$uid"
           >{{ quantityEpisodios.value }}
-          </span>-->
+          </span>
 
           
           <label for="genre-type" class="label-inp">Genre type</label>
           <input
-          v-model.trim = "state.genreType"
+          v-model.trim = "genreType"
           class="imp-create"
           type="text"
           placeholder="Genre">
 
-           <div v-if="v$?.genreType?.$dirty && !v$?.genreType?.$error">The anime invalid</div>
-          <div v-if="v$?.genreType?.$dirty && v$?.genreType?.$error">The anime fild is required</div> 
+           <!--<div v-if="v$?.genreType?.$dirty && !v$?.genreType?.$error">The anime invalid</div>
+          <div v-if="v$?.genreType?.$dirty && v$?.genreType?.$error">The anime fild is required</div> -->
 
-          <!--<span
+          <span
           class="s-big"
           v-for="error of v$.state.genreType.$errors"
           :key="error.$uid"
           >{{ genreType.value }}
-          </span>-->
+          </span>
 
           
           <label for="written-by" class="label-inp">Written by</label>
           <input
-          v-model.trim = "state.writtenBy"
+          v-model.trim = "writtenBy"
           class="imp-create"
           type="text"
           placeholder="written by">
 
-           <div v-if="v$?.writtenBy?.$dirty && !v$?.writtenBy?.$error">The anime invalid</div>
-          <div v-if="v$?.writtenBy?.$dirty && v$?.writtenBy?.$error">The anime fild is required</div>
-          <!--<span
+           <!--<div v-if="v$?.writtenBy?.$dirty && !v$?.writtenBy?.$error">The anime invalid</div>
+          <div v-if="v$?.writtenBy?.$dirty && v$?.writtenBy?.$error">The anime fild is required</div>-->
+          <span
           class="s-big"
           v-for="error of v$.state.writtenBy.$errors"
           :key="error.$uid"
           >{{ writtenBy.value }}
-          </span>-->
+          </span>
 
           
           <label for="description" class="label-inp">Description</label>
           <input
-          v-model.trim = "state.description"
+          v-model.trim = "description"
           class="imp-create"
           type="text"
           placeholder="Description">
 
-           <div v-if="v$?.description?.$dirty && !v$?.description?.$error">The anime invalid</div>
-          <div v-if="v$?.description?.$dirty && v$?.description?.$error">The anime fild is required</div> 
+           <!--<div v-if="v$?.description?.$dirty && !v$?.description?.$error">The anime invalid</div>
+          <div v-if="v$?.description?.$dirty && v$?.description?.$error">The anime fild is required</div> -->
 
-           <!--<span
+           <span
           class="s-big"
           v-for="error of v$.state.description.$errors"
           :key="error.$uid"
           >{{ description.value }}
-          </span>-->
+          </span>
 
           
           
