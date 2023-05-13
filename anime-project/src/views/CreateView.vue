@@ -44,22 +44,22 @@ import { useVuelidate } from "@vuelidate/core";
         <form action="submit" id="form-create">
 
           
-          <label for="anime-name" class="label-inp">Anime name</label>
+          <!--<label for="anime-name" class="label-inp">Anime name</label>
           <input id="tentei"
-          v-model.trim = "animeName"
+          v-model = "state.animeName"
           class="imp-create"
           type="text"
-          placeholder="Name of Anime">        
+          placeholder="Name of Anime">  -->      
 
 
-          <!--<div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
-          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>-->   
+          <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
+          <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>  
 
-            <span
+          <span
           class="s-big"
           v-for="error of v$.animeName.$errors"
           :key="error.$uid"
-          >{{ animeName.value }}
+          >{{ error }}
           </span>    
 
           
