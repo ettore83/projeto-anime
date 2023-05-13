@@ -53,6 +53,7 @@ import { useVuelidate } from "@vuelidate/core";
           />
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
           <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>
+          
 
           <label for="release-date" class="label-inp">Release date</label>
           <input
