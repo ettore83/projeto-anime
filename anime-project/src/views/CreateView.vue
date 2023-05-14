@@ -44,6 +44,8 @@ import { useVuelidate } from "@vuelidate/core";
         <form action="submit" id="form-create">
 
           <label for="anime-name" class="label-inp">Anime name</label>
+          
+      
           <input
             id="tentei"
             class="imp-create"
@@ -51,8 +53,11 @@ import { useVuelidate } from "@vuelidate/core";
             v-model.trim="animeName"
             placeholder="Name of Anime"
           />
+                   
+          
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
           <div v-if="v$?.animeName?.$dirty && v$?.animeName?.$error">The anime fild is required</div>
+
           
 
           <label for="release-date" class="label-inp">Release date</label>
