@@ -53,6 +53,8 @@ import { useVuelidate } from "@vuelidate/core";
             v-model.trim="animeName"
             placeholder="Name of Anime"
           />
+          {{ v$.animeName }}
+          
                    
           
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
