@@ -3,8 +3,9 @@ import { reactive } from "vue";
 import { required, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 
+
     const state = reactive({
-      animeName : '',
+      animeName : "",
       releaseDate : '',
       quantityEpisodios : '',
       genreType : '',
@@ -53,8 +54,8 @@ import { useVuelidate } from "@vuelidate/core";
             v-model.trim="animeName"
             placeholder="Name of Anime"
           />
-          {{ v$.animeName }}
-          
+         
+          {{ animeName }}
                    
           
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
