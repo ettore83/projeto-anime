@@ -1,17 +1,21 @@
 <script >
 import { reactive } from "vue";
+import { useRouter } from "vue-router";
 import { required, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
+import criar from "../services/config";
 
+    const router = useRouter();
 
-    const state = reactive({
-      animeName : "",
+    const MyAnime = reactive({
+      animeName : "naruto",
       releaseDate : '',
       quantityEpisodios : '',
       genreType : '',
       writtenBy : '',
       description : '',
     });
+    console.log(MyAnime.animeName)
 
     const rules = {
       animeName: { required },
@@ -23,15 +27,50 @@ import { useVuelidate } from "@vuelidate/core";
     };     
     
 
-    const v$ = useVuelidate (rules, state);
+    const v$ = useVuelidate (rules, MyAnime);
     
+
+    const sendForm = async () => {
+      MyAnime.loading = true;
+      const isFormCorrect = await v$.value.$validate();
+
+      if (!isFormCorrect) {
+        MyAnime.loading = false;
+        return;
+      }
+
+    criar
+      .create({
+        animeName: MyAnime.animeName,
+        releaseDate: MyAnime.releaseDate,
+        quantityEpisodios: MyAnime.quantityEpisodios,
+        genreType: MyAnime.genreType,
+        writtenBy: MyAnime.writtenBy,
+        description: MyAnime.description,
+      
+      })
+      .then(async (response) => {
+        if (response.status != 201) {
+          alert("Error: " + response.data);
+          return;
+        }
+
+        let idAnimeCreated = response.data.id;
+        await criar.foto(idAnimeCreated, MyAnime.uploadFoto);
+        router.push("/" + idAnimeCreated);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    MyAnime.loading = false;
+};
 
 
 
 </script>
 
 <template>
-
+  
     <main>
 
       <div class="about">
@@ -55,7 +94,11 @@ import { useVuelidate } from "@vuelidate/core";
             placeholder="Name of Anime"
           />
          
-          {{ animeName }}
+          
+          <p> anime = 
+            {{ animeName}}
+          </p>
+          
                    
           
           <div v-if="v$?.animeName?.$dirty && !v$?.animeName?.$error">The anime invalid</div>
@@ -120,8 +163,12 @@ import { useVuelidate } from "@vuelidate/core";
           >{{ description.value }}
           </span> -->          
           
-          <button type="submit" id="btn-post">
-          POST
+          <button
+            type="submit" 
+            id="btn-post"
+            v-on:click="sendForm()"            
+            value="POST">
+            POST
           </button>
 
         </form>
