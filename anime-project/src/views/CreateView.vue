@@ -1,4 +1,4 @@
-<script >
+<script setup >
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import { required, numeric, integer, minLength } from "@vuelidate/validators";
@@ -8,7 +8,7 @@ import criar from "../services/config";
     const router = useRouter();
 
     const MyAnime = reactive({
-      animeName : "naruto",
+      animeName : '',
       releaseDate : '',
       quantityEpisodios : '',
       genreType : '',
@@ -38,26 +38,23 @@ import criar from "../services/config";
         MyAnime.loading = false;
         return;
       }
-
-    criar
-      .create({
-        animeName: MyAnime.animeName,
-        releaseDate: MyAnime.releaseDate,
-        quantityEpisodios: MyAnime.quantityEpisodios,
-        genreType: MyAnime.genreType,
-        writtenBy: MyAnime.writtenBy,
+    criar.useCompositionApi()
+      .insertData({
+        name: MyAnime.animeName,
+        release_date: MyAnime.releaseDate,
+        episodes: MyAnime.quantityEpisodios,
+        genre: MyAnime.genreType,
+        author: MyAnime.writtenBy,
         description: MyAnime.description,
       
       })
       .then(async (response) => {
-        if (response.status != 201) {
+        if (response.status != 200) {
           alert("Error: " + response.data);
           return;
         }
 
-        let idAnimeCreated = response.data.id;
-        await criar.foto(idAnimeCreated, MyAnime.uploadFoto);
-        router.push("/" + idAnimeCreated);
+        console.log(response)
       })
       .catch((error) => {
         console.log(error);
@@ -90,14 +87,11 @@ import criar from "../services/config";
             id="tentei"
             class="imp-create"
             type="text"
-            v-model.trim="animeName"
+            v-model.trim="MyAnime.animeName"
             placeholder="Name of Anime"
           />
          
-          
-          <p> anime = 
-            {{ animeName}}
-          </p>
+              
           
                    
           
@@ -108,7 +102,7 @@ import criar from "../services/config";
 
           <label for="release-date" class="label-inp">Release date</label>
           <input
-          v-model.trim = "releaseDate"
+          v-model.trim = "MyAnime.releaseDate"
           class="imp-create"
           type="number"
           placeholder="When it was released">
@@ -118,7 +112,7 @@ import criar from "../services/config";
 
           <label for="quantity-episodios" class="label-inp">Quantity episodios</label>
           <input
-          v-model.trim = "quantityEpisodios"
+          v-model.trim = "MyAnime.quantityEpisodios"
           class="imp-create"
           type="text"
           placeholder="Episodios released">
@@ -128,7 +122,7 @@ import criar from "../services/config";
 
           <label for="genre-type" class="label-inp">Genre type</label>
           <input
-          v-model.trim = "genreType"
+          v-model.trim = "MyAnime.genreType"
           class="imp-create"
           type="text"
           placeholder="Genre">
@@ -138,7 +132,7 @@ import criar from "../services/config";
 
           <label for="written-by" class="label-inp">Written by</label>
           <input
-          v-model.trim = "writtenBy"
+          v-model.trim = "MyAnime.writtenBy"
           class="imp-create"
           type="text"
           placeholder="written by">
@@ -148,7 +142,7 @@ import criar from "../services/config";
 
           <label for="description" class="label-inp">Description</label>
           <input
-          v-model.trim = "description"
+          v-model.trim = "MyAnime.description"
           class="imp-create"
           type="text"
           placeholder="Description">
@@ -163,8 +157,8 @@ import criar from "../services/config";
           >{{ description.value }}
           </span> -->          
           
-          <button
-            type="submit" 
+          <button 
+            type = "button"           
             id="btn-post"
             v-on:click="sendForm()"            
             value="POST">

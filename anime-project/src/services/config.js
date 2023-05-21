@@ -23,8 +23,23 @@ export default function useCompositionApi() {
 
     state.loading = false
   }
+  async function insertData(params  ) {
+    state.loading = true
 
-  return { state, fetchData }
+    try {
+      const response = await axios.post('/anime',params)
+      console.log(response)
+      state.data = response.data
+    } 
+      catch (error) {
+      console.log(error)
+      state.error = error
+    }
+
+    state.loading = false
+  }
+
+  return { state, fetchData,insertData }
 }
 
 export { useCompositionApi }
