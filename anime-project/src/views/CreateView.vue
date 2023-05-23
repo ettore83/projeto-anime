@@ -6,8 +6,6 @@ import { required, numeric, integer, minLength } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 import criar from "../services/config";
 
-    const router = useRouter();
-
     const MyAnime = reactive({
       animeName : '',
       releaseDate : '',
@@ -25,11 +23,9 @@ import criar from "../services/config";
       genreType: { required },
       writtenBy: { required },
       description: { required },
-    };     
-    
+    };         
 
-    const v$ = useVuelidate (rules, MyAnime);
-    
+    const v$ = useVuelidate (rules, MyAnime);    
 
     const sendForm = async () => {
       MyAnime.loading = true;
@@ -39,16 +35,17 @@ import criar from "../services/config";
         MyAnime.loading = false;
         return;
       }
-    criar.useCompositionApi()
-      .insertData({
-        name: MyAnime.animeName,
-        release_date: MyAnime.releaseDate,
-        episodes: MyAnime.quantityEpisodios,
-        genre: MyAnime.genreType,
-        author: MyAnime.writtenBy,
-        description: MyAnime.description,
-      
-      })
+
+      criar
+        .insertData({
+          name: MyAnime.animeName,
+          release_date: MyAnime.releaseDate,
+          episodes: MyAnime.quantityEpisodios,
+          genre: MyAnime.genreType,
+          author: MyAnime.writtenBy,
+          description: MyAnime.description,
+        
+        })
       .then(async (response) => {
         if (response.status != 200) {
           alert("Error: " + response.data);
