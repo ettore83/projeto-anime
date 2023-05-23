@@ -3,6 +3,15 @@ import { reactive } from 'vue'
 
 export default function useCompositionApi() {
   const state = reactive({
+
+    newList:{
+      animeName : '',
+      releaseDate : '',
+      quantityEpisodios : '',
+      genreType : '',
+      writtenBy : '',
+      description : '',
+    },
     data: null,
     loading: false,
     error: null
@@ -29,7 +38,7 @@ export default function useCompositionApi() {
     try {
       const response = await axios.post('/anime',params)
       console.log(response)
-      state.data = response.data
+      state.params = response.data
     } 
       catch (error) {
       console.log(error)
@@ -43,5 +52,7 @@ export default function useCompositionApi() {
 }
 
 export { useCompositionApi }
+
+
 
 
